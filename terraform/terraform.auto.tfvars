@@ -26,14 +26,14 @@ ami-sonar = "ami-0f8bd95a744e074b8"
 
 keypair = "devops"
 
-master-password = "devopspblproject"
+master-password = "$Amson1234"
 
-master-username = "david"
+master-username = "samsoncasava"
 
-account_no = "696742900004"
+account_no = "995853556593"
 
 tags = {
-  Owner-Email     = "infradev-segun@darey.io"
+  Owner-Email     = "samson@casava.co"
   Managed-By      = "Terraform"
-  Billing-Account = "1234567890"
+  Billing-Account = "995853556593"
 }
