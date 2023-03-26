@@ -22,7 +22,7 @@ source "amazon-ebs" "terraform-bastion-prj-19" {
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["309956199498"]
+    owners      = ["995853556593"]
   }
   ssh_username = "ec2-user"
   tag {
