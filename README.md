@@ -16,8 +16,6 @@ Always refer to the given diagram
 
 ![project image](./tooling_project_15.png)
 
-
-
 ## install graphviz 
 sudo apt install graphviz
 
@@ -25,7 +23,7 @@ sudo apt install graphviz
 - terraform graph -type=plan | dot -Tpng > graph.png
 - terraform graph  | dot -Tpng > graph.png
 
-## Read More abot terrafrom graph
+## Read More about terraform graph
 https://www.terraform.io/docs/cli/commands/graph.html
 
 
@@ -33,7 +31,7 @@ https://www.terraform.io/docs/cli/commands/graph.html
 
 - Build images using packer
 - confirm the AMIs in the console
-- update terrafrom script with new ami IDs generated from packer build
+- update terraform script with new ami IDs generated from packer build
 - create terraform cloud account and backend
 - run terraform script
 - update ansible script with values from teraform output
