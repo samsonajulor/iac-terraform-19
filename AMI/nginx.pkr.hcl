@@ -15,12 +15,12 @@ source "amazon-ebs" "terraform-nginx-prj-19" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = "RHEL-8.2_HVM-20200803-x86_64-0-Hourly2-GP2"
+      name                = "RHEL-8.6.0_HVM-20230301-x86_64-0-Hourly2-GP2"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["995853556593"]
+    owners      = ["309956199498"]
   }
   ssh_username = "ec2-user"
   tag {

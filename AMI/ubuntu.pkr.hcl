@@ -15,12 +15,12 @@ source "amazon-ebs" "terraform-ubuntu-prj-19" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
+      name                = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["995853556593"]
+    owners      = ["099720109477"]
   }
   ssh_username = "ubuntu"
   tag {
