@@ -1,7 +1,7 @@
 # The entire section create a certiface, public zone, and validate the certificate using DNS method
 
 # Create the certificate using a wildcard for all the domains created in david.toolingabby.com
-resource "aws_acm_certificate" "project_19_cert" {
+resource "aws_acm_certificate" "samsonajulor" {
   domain_name       = "*.samsonajulor.gq"
   validation_method = "DNS"
 }
@@ -13,9 +13,9 @@ data "aws_route53_zone" "samsonajulor" {
 }
 
 # selecting validation method
-resource "aws_route53_record" "project_19_record" {
+resource "aws_route53_record" "samsonajulor" {
   for_each = {
-    for dvo in aws_acm_certificate.project_19_cert.domain_validation_options : dvo.domain_name => {
+    for dvo in aws_acm_certificate.samsonajulor.domain_validation_options : dvo.domain_name => {
       name   = dvo.resource_record_name
       record = dvo.resource_record_value
       type   = dvo.resource_record_type
@@ -27,18 +27,18 @@ resource "aws_route53_record" "project_19_record" {
   records         = [each.value.record]
   ttl             = 60
   type            = each.value.type
-  zone_id         = data.aws_route53_zone.project_19_zone.zone_id
+  zone_id         = data.aws_route53_zone.samsonajulor.zone_id
 }
 
 # validate the certificate through DNS method
 resource "aws_acm_certificate_validation" "project_19_validation" {
-  certificate_arn         = aws_acm_certificate.project_19_cert.arn
-  validation_record_fqdns = [for record in aws_route53_record.project_19_record : record.fqdn]
+  certificate_arn         = aws_acm_certificate.samsonajulor.arn
+  validation_record_fqdns = [for record in aws_route53_record.samsonajulor : record.fqdn]
 }
 
 # create records for tooling
 resource "aws_route53_record" "tooling" {
-  zone_id = data.aws_route53_zone.project_19_zone.zone_id
+  zone_id = data.aws_route53_zone.samsonajulor.zone_id
   name    = "tooling.samsonajulor.gq"
   type    = "A"
 
@@ -52,7 +52,7 @@ resource "aws_route53_record" "tooling" {
 
 # create records for wordpress
 resource "aws_route53_record" "wordpress" {
-  zone_id = data.aws_route53_zone.project_19_zone.zone_id
+  zone_id = data.aws_route53_zone.samsonajulor.zone_id
   name    = "wordpress.samsonajulor.gq"
   type    = "A"
 
