@@ -13,7 +13,7 @@ terraform {
     organization = "pisitis"
 
     workspaces {
-      name = "PBL-19"
+      name = "iac-terraform-19"
     }
   }
 }

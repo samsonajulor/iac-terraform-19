@@ -16,11 +16,11 @@ preferred_number_of_private_subnets = 4
 
 environment = "dev"
 
-ami-web = "ami-00a45107f7c3455a5"
+ami-web = "ami-064d00be2d240a176"
 
-ami-bastion = "ami-0dbc99375eba56ff4"
+ami-bastion = "ami-0f388dfbb26c795e2"
 
-ami-nginx = "ami-010bd88cc8f5997f3"
+ami-nginx = "ami-0c87ca0032c283353"
 
 ami-sonar = "ami-0f8bd95a744e074b8"
 
